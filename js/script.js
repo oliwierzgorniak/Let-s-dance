@@ -54,9 +54,9 @@ function getCurrentScene() {
 }
 
 function drawSceneOne() {
-  camera(0, 300, 200) // front
-  // camera(0, 0, 300) // top
-  // camera(0, 0, 300) // top
+  camera(-300, -100, 300) // front
+  // camera(200, 120, 100) // top
+  // camera(0, 100, 1) // top
 
   drawJeweleryBox()
   
