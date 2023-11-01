@@ -60,12 +60,13 @@ function getCurrentScene() {
 }
 
 function drawSceneOne() {
-  camera(0, TABLE_HEIGHT* 4, TABLE_HEIGHT * 2, 0, 0, TABLE_HEIGHT) // front
-  // camera(0, 1000, 200) // front
+  // camera(0, TABLE_HEIGHT* 2, TABLE_HEIGHT, 0, 0, TABLE_HEIGHT) // front
+  camera(0, 2000, 1001, 0, 0, 1000) // front
   // camera(0, 0, 1000) // top
   // camera(0, 250, 150) // top
 
   normalMaterial()
+  plane(10000, 10000)
   drawJeweleryBox()
   drawTable();
   push()
@@ -75,6 +76,7 @@ function drawSceneOne() {
   drawNutcracker(-NUTCRACKER_POSITION);
   pop()
   drawChair()
+  drawChristmasTree()
 }
 
 // function showTime() {
