@@ -3,7 +3,8 @@ const BACKGROUND_COLOR = 'black';
 let currentScene = 0;
 let time = 0;
 let song;
-let ballerina;
+let ballerinaModel;
+let nutcrackerModel;
 
 function setup() {
   createCanvas(640, 360, WEBGL)
@@ -12,7 +13,8 @@ function setup() {
 
 function preload() {
   song = loadSound("./assets/tchaikovsky-dance-of-the-sugar-plum-fairy.mp3")
-  ballerina = loadModel("./assets/ballerina.obj", true);
+  ballerinaModel = loadModel("./assets/ballerina.obj", true);
+  nutcrackerModel = loadModel("./assets/nutcracker.obj", true);
 }
 
 function draw() {
@@ -57,13 +59,16 @@ function getCurrentScene() {
 
 function drawSceneOne() {
   // camera(0, 500, 200) // front
-  camera(0, 250, 200) // front
+  // camera(0, 250, 200) // front
   // camera(0, 200, 200) // top
-  // camera(0, 100, 1) // top
+  camera(0, 250, 150) // top
 
+  normalMaterial()
   drawJeweleryBox()
   drawTable();
   drawBallerina()
+  drawNutcracker(NUTCRACKER_POSITION);
+  drawNutcracker(-NUTCRACKER_POSITION);
 }
 
 // function showTime() {

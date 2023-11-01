@@ -1,4 +1,4 @@
-const BALLERINA_SCALE = 0.17
+const BALLERINA_SCALE = 0.15
 const BALLERINA_APPROXIMATE_HEIGHT = BALLERINA_SCALE * 200
 
 function drawBallerina() {
@@ -8,6 +8,6 @@ function drawBallerina() {
   scale(BALLERINA_SCALE)
   rotateY(millis() * 0.1)
   normalMaterial()
-  model(ballerina)
+  model(ballerinaModel)
   pop()
 }
