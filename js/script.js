@@ -19,6 +19,8 @@ function preload() {
 
 function draw() {
   background(BACKGROUND_COLOR);
+  orbitControl(0.05, 0.05, 0.05, {freeRotation: true});
+  // camera(0, 200, 300) // front
   drawSceneOne()
 
   // currentScene = getCurrentScene();
@@ -58,17 +60,21 @@ function getCurrentScene() {
 }
 
 function drawSceneOne() {
-  // camera(0, 500, 200) // front
-  // camera(0, 250, 200) // front
-  // camera(0, 200, 200) // top
-  camera(0, 250, 150) // top
+  camera(0, TABLE_HEIGHT* 4, TABLE_HEIGHT * 2, 0, 0, TABLE_HEIGHT) // front
+  // camera(0, 1000, 200) // front
+  // camera(0, 0, 1000) // top
+  // camera(0, 250, 150) // top
 
   normalMaterial()
   drawJeweleryBox()
   drawTable();
+  push()
+  translate(0, 0, TABLE_HEIGHT)
   drawBallerina()
   drawNutcracker(NUTCRACKER_POSITION);
   drawNutcracker(-NUTCRACKER_POSITION);
+  pop()
+  drawChair()
 }
 
 // function showTime() {

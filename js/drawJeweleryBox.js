@@ -14,7 +14,10 @@ const NUTCRACKER_POSITION = (BOX_WIDTH / 2 - WALL_THICKNESS * 2) * 0.8;
 let topBoxRotationAngel = 0;
 let platformLevelOffset = 0;
 
-function drawJeweleryBox() {  
+function drawJeweleryBox() {
+  push()
+  translate(0, 0, TABLE_HEIGHT)
+
   drawBottomBox()
 
   drawNutcrackerTower(NUTCRACKER_POSITION)
@@ -38,6 +41,7 @@ function drawJeweleryBox() {
   
   if (platformLevelOffset < MAX_PLATFORM_LEVEL_OFFSET)
   platformLevelOffset += 1;
+  pop()
 }
 
 function drawBottomBox() {
