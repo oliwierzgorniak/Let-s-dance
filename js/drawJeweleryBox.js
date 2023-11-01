@@ -33,7 +33,7 @@ function drawJeweleryBox() {
   pop()
   
   if (platformLevelOffset < MAX_PLATFORM_LEVEL_OFFSET)
-  platformLevelOffset += 0.1;
+  platformLevelOffset += 1;
 }
 
 function drawBottomBox() {

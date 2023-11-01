@@ -17,7 +17,6 @@ function drawTable() {
   cone(TABLE_SURFACE_RADIUS, TABLE_CONE_HEIGHT)
   pop()
 
-
   push()
   rotateX(90)
   translate(0, -(TABLE_CYLIDNER_HEIHGT + TABLE_CONE_HEIGHT / 2 + TABLE_LEG_HEIGHT / 2 - TABLE_CYLIDNER_HEIHGT * 0.2), 0)

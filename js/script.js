@@ -3,6 +3,7 @@ const BACKGROUND_COLOR = 'black';
 let currentScene = 0;
 let time = 0;
 let song;
+let ballerina;
 
 function setup() {
   createCanvas(640, 360, WEBGL)
@@ -11,6 +12,7 @@ function setup() {
 
 function preload() {
   song = loadSound("./assets/tchaikovsky-dance-of-the-sugar-plum-fairy.mp3")
+  ballerina = loadModel("./assets/ballerina.obj", true);
 }
 
 function draw() {
@@ -54,14 +56,14 @@ function getCurrentScene() {
 }
 
 function drawSceneOne() {
-  // camera(0, 400, 1) // front
-  camera(0, 600, 1) // front
-  // camera(200, 120, 100) // top
+  // camera(0, 500, 200) // front
+  camera(0, 250, 200) // front
+  // camera(0, 200, 200) // top
   // camera(0, 100, 1) // top
 
   drawJeweleryBox()
   drawTable();
-  
+  drawBallerina()
 }
 
 // function showTime() {
