@@ -1,4 +1,5 @@
 const BACKGROUND_COLOR = 'black';
+const BACK_WALL_POSITION = 1000;
 
 let currentScene = 0;
 let time = 0;
@@ -61,12 +62,20 @@ function getCurrentScene() {
 
 function drawSceneOne() {
   // camera(0, TABLE_HEIGHT* 2, TABLE_HEIGHT, 0, 0, TABLE_HEIGHT) // front
-  camera(0, 2000, 1001, 0, 0, 1000) // front
-  // camera(0, 0, 1000) // top
+  // camera(0, 2000, 1001, 0, 0, 1000) // front
+  camera(0, 400, 1000) // top
   // camera(0, 250, 150) // top
 
+  
   normalMaterial()
+  push()
+  rotateX(90)
+  translate(0, 0, BACK_WALL_POSITION)
   plane(10000, 10000)
+  pop()
+  
+  plane(10000, 10000)
+  
   drawJeweleryBox()
   drawTable();
   push()
@@ -77,6 +86,7 @@ function drawSceneOne() {
   pop()
   drawChair()
   drawChristmasTree()
+  drawWindow()
 }
 
 // function showTime() {
