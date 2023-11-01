@@ -31,5 +31,10 @@ function drawWindow() {
   box(FRAME_THICKNESS, FRAME_THICKNESS * 0.2, WINDOW_HEIGHT)
   pop()
   
+  push()
+  translate(0, 1 ,0)
+  box(WINDOW_WIDTH, FRAME_THICKNESS * 0.2, FRAME_THICKNESS)
+  pop()
+  
   pop()
 }
