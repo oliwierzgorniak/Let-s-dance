@@ -45,7 +45,7 @@ if (animationStarted) {
   
   if (cameraMovmentPhase === 7 && cameraProps.zCentral > TABLE_HEIGHT + WINDOW_HEIGHT / 2 - 50 ) {
     cameraProps.y += 0.4;
-    cameraProps.z -= 3;
+    cameraProps.z -= 1;
     cameraProps.zCentral -= 1
   } else if (cameraMovmentPhase === 7) cameraMovmentPhase = 8;
 
