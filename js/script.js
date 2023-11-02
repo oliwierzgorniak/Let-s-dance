@@ -7,6 +7,8 @@ let song;
 let ballerinaModel;
 let nutcrackerModel;
 
+let startTime;
+
 let animationStarted = false;
 
 function setup() {
@@ -112,6 +114,7 @@ startButtonElement.addEventListener('click', () => {
   canvasElement.style.opacity = '1';
 
   animationStarted = true;
+  startTime = millis()
   startButtonElement.remove()
 })
 
