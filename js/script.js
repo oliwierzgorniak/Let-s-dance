@@ -7,6 +7,8 @@ let song;
 let ballerinaModel;
 let nutcrackerModel;
 
+let animationStarted = false;
+
 function setup() {
   createCanvas(640, 360, WEBGL)
   angleMode(DEGREES)
@@ -19,25 +21,25 @@ function preload() {
 }
 
 function draw() {
+  
   background(BACKGROUND_COLOR);
   orbitControl(0.05, 0.05, 0.05, {freeRotation: true});
-  // camera(0, 200, 300) // front
   drawSceneOne()
-
+  
   // currentScene = getCurrentScene();
-
+  
   // switch (currentScene) {
-  //   case 1:
-  //     drawRect(0);
-  //     break;
-  //   case 2:
-  //     drawRect("red");
-  //     break;
-  //   case 3:
-  //     drawRect(255);
-  //     break;
-  // }
-
+    //   case 1:
+    //     drawRect(0);
+    //     break;
+    //   case 2:
+    //     drawRect("red");
+    //     break;
+    //   case 3:
+    //     drawRect(255);
+    //     break;
+    // }
+    
   // showTime();
 
 }
@@ -61,12 +63,13 @@ function getCurrentScene() {
 }
 
 function drawSceneOne() {
-  // camera(0, TABLE_HEIGHT* 2, TABLE_HEIGHT, 0, 0, TABLE_HEIGHT) // front
-  // camera(0, 2000, 1001, 0, 0, 1000) // front
-  
-  // camera(0, 1000, 1000, 0, 0, TABLE_HEIGHT * 1.3) // top
-  camera(0, 200, TABLE_HEIGHT * 1.8 + 1, 0, 0, TABLE_HEIGHT * 1.2) // top
 
+  // // camera(0, TABLE_HEIGHT* 2, TABLE_HEIGHT, 0, 0, TABLE_HEIGHT) // front
+  // // camera(0, 2000, 1001, 0, 0, 1000) // front
+  
+  // // camera(0, 1000, 1000, 0, 0, TABLE_HEIGHT * 1.3) // top
+  // camera(0, 200, TABLE_HEIGHT * 1.8 + 1, 0, 0, TABLE_HEIGHT * 1.2) // top
+  handleCamera()
   
   normalMaterial()
   push()
@@ -101,9 +104,17 @@ function drawSceneOne() {
 //   pop();
 // }
 
-// function mouseClicked() {
-//   song.play();
-// }
+let startButtonElement = document.querySelector('button');
+startButtonElement.addEventListener('click', () => {
+  song.play();
+
+  let canvasElement = document.querySelector('canvas')
+  canvasElement.style.opacity = '1';
+
+  animationStarted = true;
+  startButtonElement.remove()
+})
+
 
 // function drawRect(colour) {
 //   push();
