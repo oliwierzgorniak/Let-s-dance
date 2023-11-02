@@ -10,8 +10,7 @@ const PANEL_DEPTH = 2;
 const MAX_PLATFORM_LEVEL_OFFSET = BOTTOM_BOX_HEIGHT / 2;
 const NUTCRACKER_POSITION = (BOX_WIDTH / 2 - WALL_THICKNESS * 2) * 0.8; 
 
-const BOX_SLEEP_TIME = 9000;
-
+const BOX_SLEEP_TIME = 8400;
 
 let topBoxRotationAngel = 0;
 let platformLevelOffset = 0;
@@ -41,7 +40,7 @@ function drawJeweleryBox() {
   if (animationStarted) {
 
     if (millis() - startTime > BOX_SLEEP_TIME && boxAnimationPhase < 17 && topBoxRotationAngel < 150)
-    topBoxRotationAngel += 1;
+    topBoxRotationAngel += 0.7;
   
   if (millis() - startTime > BOX_SLEEP_TIME) {
     if ( boxAnimationPhase === 0 && platformLevelOffset < MAX_PLATFORM_LEVEL_OFFSET) {
@@ -54,7 +53,7 @@ function drawJeweleryBox() {
   } else if (boxAnimationPhase === 16) boxAnimationPhase = 17;
   
   if ( boxAnimationPhase === 17 && topBoxRotationAngel > 0) {
-    topBoxRotationAngel -= 1;
+    topBoxRotationAngel -= 0.6;
   } else if (boxAnimationPhase === 17) boxAnimationPhase = 18;
   }
   

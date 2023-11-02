@@ -6,28 +6,28 @@ let myCamera;
 function handleCamera() {
 if (animationStarted) {
   if (cameraMovmentPhase === 0 && cameraProps.z > TABLE_HEIGHT + BOTTOM_BOX_HEIGHT + 1 && cameraProps.y > 200) {
-    cameraProps.y -= 0.3;
-    cameraProps.z -= 0.1;
+    cameraProps.y -= 0.34;
+    cameraProps.z -= 0.12;
   } else if (cameraMovmentPhase === 0) cameraMovmentPhase = 1;
 }
   
   if (cameraMovmentPhase === 1 && cameraProps.x > - TABLE_SURFACE_RADIUS * 0.7) {
-    cameraProps.x -= 1;
+    cameraProps.x -= 0.57;
     cameraProps.y -= 0.3;
   } else if (cameraMovmentPhase === 1) cameraMovmentPhase = 2;
   
   if (cameraMovmentPhase === 2 && cameraProps.x < 0) {
-    cameraProps.x += 0.9;
+    cameraProps.x += 0.57;
     cameraProps.y += 0.3;
   } else if (cameraMovmentPhase === 2) cameraMovmentPhase = 3;
 
   if (cameraMovmentPhase === 3 && cameraProps.x < TABLE_SURFACE_RADIUS * 0.7) {
-    cameraProps.x += 0.9;
+    cameraProps.x += 0.57;
     cameraProps.y -= 0.3;
   } else if (cameraMovmentPhase === 3) cameraMovmentPhase = 4;
   
   if (cameraMovmentPhase === 4 && cameraProps.x > 0) {
-    cameraProps.x -= 1;
+    cameraProps.x -= 0.57;
     cameraProps.y += 0.3;
   } else if (cameraMovmentPhase === 4) cameraMovmentPhase = 5;
 
