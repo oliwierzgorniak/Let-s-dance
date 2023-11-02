@@ -7,12 +7,12 @@ const LOCK_ONE_RADIUS = 10;
 const LOCK_ONE_HEIGHT = 2;
 const PANEL_MARGIN = 10;
 const PANEL_DEPTH = 2;
-const MAX_BOX_ROTATION = 150;
 const MAX_PLATFORM_LEVEL_OFFSET = BOTTOM_BOX_HEIGHT / 2;
 const NUTCRACKER_POSITION = (BOX_WIDTH / 2 - WALL_THICKNESS * 2) * 0.8; 
 
 let topBoxRotationAngel = 0;
 let platformLevelOffset = 0;
+let boxAnimationPhase = 0;
 
 function drawJeweleryBox() {
   push()
@@ -29,7 +29,7 @@ function drawJeweleryBox() {
   box(BOX_WIDTH, BOX_DEPTH, TOP_BOX_HEIGHT);
   pop()
   
-  if (topBoxRotationAngel < MAX_BOX_ROTATION)
+  if (boxAnimationPhase < 17 && topBoxRotationAngel < 150)
   topBoxRotationAngel += 1;
 
   push()
@@ -37,8 +37,19 @@ function drawJeweleryBox() {
   box(BOX_WIDTH - WALL_THICKNESS * 2, BOX_DEPTH - WALL_THICKNESS * 2, WALL_THICKNESS)
   pop()
   
-  if (platformLevelOffset < MAX_PLATFORM_LEVEL_OFFSET)
-  platformLevelOffset += 0.4;
+  if (boxAnimationPhase === 0 && platformLevelOffset < MAX_PLATFORM_LEVEL_OFFSET) {
+    platformLevelOffset += 0.4;
+  } else if (boxAnimationPhase === 0) boxAnimationPhase = 1;
+  
+  if (boxAnimationPhase === 16 && platformLevelOffset > 0) {
+    platformLevelOffset -= 0.4;
+  } else if (boxAnimationPhase === 16) boxAnimationPhase = 17;
+  
+  if (boxAnimationPhase === 17 && topBoxRotationAngel > 0) {
+    console.log(topBoxRotationAngel)
+    topBoxRotationAngel -= 1;
+  } else if (boxAnimationPhase === 17) boxAnimationPhase = 18;
+
   pop()
 }
 
