@@ -63,8 +63,8 @@ function getCurrentScene() {
 function drawSceneOne() {
   // camera(0, TABLE_HEIGHT* 2, TABLE_HEIGHT, 0, 0, TABLE_HEIGHT) // front
   // camera(0, 2000, 1001, 0, 0, 1000) // front
-  camera(0, 400, 1000) // top
-  // camera(0, 250, 150) // top
+  // camera(0, 400, 1000) // top
+  camera(0, 200, TABLE_HEIGHT * 1.8 + 1, 0, 0, TABLE_HEIGHT * 1.2) // top
 
   
   normalMaterial()
@@ -81,8 +81,6 @@ function drawSceneOne() {
   push()
   translate(0, 0, TABLE_HEIGHT)
   drawBallerina()
-  drawNutcracker(NUTCRACKER_POSITION);
-  drawNutcracker(-NUTCRACKER_POSITION);
   pop()
   drawChair()
   drawChristmasTree()

@@ -19,9 +19,7 @@ function drawJeweleryBox() {
   translate(0, 0, TABLE_HEIGHT)
 
   drawBottomBox()
-
-  drawNutcrackerTower(NUTCRACKER_POSITION)
-  drawNutcrackerTower(-NUTCRACKER_POSITION)
+  drawNutcrackers();
   
   push()
   translate(0, 0, BOTTOM_BOX_HEIGHT + TOP_BOX_HEIGHT / 2);
@@ -40,7 +38,7 @@ function drawJeweleryBox() {
   pop()
   
   if (platformLevelOffset < MAX_PLATFORM_LEVEL_OFFSET)
-  platformLevelOffset += 1;
+  platformLevelOffset += 0.4;
   pop()
 }
 
