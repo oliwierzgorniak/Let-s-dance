@@ -8,6 +8,7 @@ function drawWindow() {
   specularMaterial(26, 20, 1);
   translate(0, -BACK_WALL_POSITION - (FRAME_THICKNESS * 0.2) / 2, TABLE_HEIGHT);
 
+  // horizontal frames
   push();
   translate(
     0,
@@ -31,6 +32,7 @@ function drawWindow() {
   box(FRAME_THICKNESS, FRAME_THICKNESS * 0.2, WINDOW_HEIGHT);
   pop();
 
+  // vertical frames
   push();
   translate(
     WINDOW_WIDTH / 2 - FRAME_THICKNESS / 2,

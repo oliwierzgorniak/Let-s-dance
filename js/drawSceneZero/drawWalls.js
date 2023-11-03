@@ -1,6 +1,7 @@
 const WALL_SIZE = 20000;
 
 function drawWalls() {
+  // back wall
   push();
   fill(15, 15, 15);
   specularMaterial(15, 15, 15);
@@ -9,6 +10,7 @@ function drawWalls() {
   plane(WALL_SIZE, WALL_SIZE);
   pop();
 
+  // floor
   push();
   fill(61, 2, 2);
   specularMaterial(61, 2, 2);

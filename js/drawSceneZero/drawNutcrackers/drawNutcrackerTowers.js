@@ -16,6 +16,7 @@ function drawNutcrackerTowers() {
   fill(184, 163, 7);
   specularMaterial(184, 163, 7);
 
+  // tower 0
   push();
   rotateX(90);
   translate(
@@ -30,6 +31,7 @@ function drawNutcrackerTowers() {
   cylinder(TOWER_CYLINDER_RADIUS, TOWER_CYLINDER_HEIGHT);
   pop();
 
+  // tower 1
   push();
   rotateX(90);
   translate(

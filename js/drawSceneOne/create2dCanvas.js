@@ -11,6 +11,7 @@ function create2dCanvas() {
     };
 
     sketch.draw = function () {
+      // reloading the website after the animation is finished
       if (millis() - startTime >= 56000 && !wasReloaded) {
         location.reload();
         wasReloaded = true;

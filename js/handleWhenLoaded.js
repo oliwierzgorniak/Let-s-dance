@@ -5,6 +5,7 @@ function handleWhenLoaded() {
 
   if (thingsToLoad <= 0) {
     let modalElement = document.querySelector(".modal");
+    // showing hidden modal
     modalElement.style.display = "flex";
   }
 }

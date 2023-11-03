@@ -3,6 +3,7 @@ function drawNutcrackerModels() {
   fill(117, 81, 19);
   specularMaterial(117, 81, 19);
 
+  // nutracker 0
   push();
   rotateX(90);
   translate(
@@ -22,6 +23,7 @@ function drawNutcrackerModels() {
   model(nutcrackerModel);
   pop();
 
+  // nutracker 1
   push();
   rotateX(90);
   translate(

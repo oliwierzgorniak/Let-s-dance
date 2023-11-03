@@ -17,18 +17,21 @@ function drawTable() {
 
   translate(0, 0, TABLE_HEIGHT);
 
+  // surface
   push();
   rotateX(-90);
   translate(0, TABLE_CYLIDNER_HEIHGT / 2, 0);
   cylinder(TABLE_SURFACE_RADIUS, TABLE_CYLIDNER_HEIHGT);
   pop();
 
+  // cone beneath surface
   push();
   rotateX(-90);
   translate(0, TABLE_CYLIDNER_HEIHGT + TABLE_TOP_CONE_HEIGHT / 2, 0);
   cone(TABLE_SURFACE_RADIUS, TABLE_TOP_CONE_HEIGHT);
   pop();
 
+  // leg
   push();
   rotateX(90);
   translate(
@@ -44,6 +47,7 @@ function drawTable() {
   cylinder(TABLE_LEG_RADIUS, TABLE_LEG_HEIGHT);
   pop();
 
+  // leg cone
   push();
   rotateX(90);
   translate(

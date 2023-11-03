@@ -10,6 +10,7 @@ function drawChristmasTree() {
 
   translate(TABLE_SURFACE_RADIUS * 3.5, -TABLE_SURFACE_RADIUS * 3, 0);
 
+  // trunk
   push();
   fill(64, 43, 8);
   specularMaterial(64, 43, 8);
@@ -18,6 +19,7 @@ function drawChristmasTree() {
   cylinder(TRUNK_RADIUS, TRUNK_HEIGHT);
   pop();
 
+  // parts of the tree
   push();
   rotateX(90);
   translate(0, TRUNK_HEIGHT + TREE_BASE_CONE_HEIGHT / 2, 0);

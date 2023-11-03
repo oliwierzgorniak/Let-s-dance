@@ -29,11 +29,13 @@ function drawChair() {
     pop();
   });
 
+  // sit
   push();
   translate(0, 0, CHAIR_LEG_HEIGHT + CHAIR_SIT_THICKNESS / 2);
   box(CHAIR_SITTING_SIZE, CHAIR_SITTING_SIZE, CHAIR_SIT_THICKNESS);
   pop();
 
+  // back support
   push();
   translate(
     (CHAIR_SITTING_SIZE / 2) * 0.8,
@@ -43,6 +45,7 @@ function drawChair() {
   box(CHAIR_LEG_THICKNESS, CHAIR_LEG_THICKNESS, CHAIR_BACK_LEG_HEIGHT);
   pop();
 
+  // back support
   push();
   translate(
     (-CHAIR_SITTING_SIZE / 2) * 0.8,
@@ -52,6 +55,7 @@ function drawChair() {
   box(CHAIR_LEG_THICKNESS, CHAIR_LEG_THICKNESS, CHAIR_BACK_LEG_HEIGHT);
   pop();
 
+  // back
   push();
   translate(
     0,

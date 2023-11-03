@@ -15,6 +15,7 @@ let startTime;
 function setup() {
   createCanvas(CANVAS_WIDTH, CANVAS_HEIGHT, WEBGL);
   angleMode(DEGREES);
+  frameRate(61);
 }
 
 function preload() {
