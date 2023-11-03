@@ -1,6 +1,6 @@
 const FRAME_THICKNESS = 30;
-const WINDOW_WIDTH = 640 + FRAME_THICKNESS * 2;
-const WINDOW_HEIGHT = 360 + FRAME_THICKNESS * 2;
+const WINDOW_WIDTH = 640 ;
+const WINDOW_HEIGHT = 360 ;
 
 function drawWindow() {
   push()

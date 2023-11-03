@@ -4,8 +4,6 @@ let myCamera;
 
 
 function handleCamera() {
-  console.log(cameraMovmentPhase)
-
 if (animationStarted) {
   if (cameraMovmentPhase === 0 && cameraProps.z > TABLE_HEIGHT + BOTTOM_BOX_HEIGHT + 1 && cameraProps.y > 200) {
     cameraProps.y -= 0.34;
@@ -13,7 +11,7 @@ if (animationStarted) {
   } else if (cameraMovmentPhase === 0) cameraMovmentPhase = 1;
 }
   
-  if (cameraMovmentPhase === 1 && cameraProps.x > - TABLE_SURFACE_RADIUS * 0.65) {
+  if (cameraMovmentPhase === 1 && cameraProps.x > - TABLE_SURFACE_RADIUS * 0.62) {
     cameraProps.x -= 0.496;
     cameraProps.y -= 0.3;
   } else if (cameraMovmentPhase === 1) cameraMovmentPhase = 2;
@@ -23,7 +21,7 @@ if (animationStarted) {
     cameraProps.y += 0.3;
   } else if (cameraMovmentPhase === 2) cameraMovmentPhase = 3;
 
-  if (cameraMovmentPhase === 3 && cameraProps.x < TABLE_SURFACE_RADIUS * 0.65) {
+  if (cameraMovmentPhase === 3 && cameraProps.x < TABLE_SURFACE_RADIUS * 0.62) {
     cameraProps.x += 0.496;
     cameraProps.y -= 0.3;
   } else if (cameraMovmentPhase === 3) cameraMovmentPhase = 4;
@@ -63,6 +61,12 @@ if (
   cameraProps.yCentral -= 2.2
   cameraProps.zCentral += 0.11
 } else if (cameraMovmentPhase === 8) cameraMovmentPhase = 9;
+
+if (
+  cameraMovmentPhase === 9
+) {
+  currentScene = 2
+}
 
   camera(cameraProps.x, cameraProps.y, cameraProps.z, cameraProps.xCentral, cameraProps.yCentral, cameraProps.zCentral, cameraProps.x * 5.7, 1000, 0)
 

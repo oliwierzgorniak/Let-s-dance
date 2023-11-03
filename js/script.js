@@ -1,11 +1,12 @@
 const BACKGROUND_COLOR = 'black';
 const BACK_WALL_POSITION = 1000;
 
-let currentScene = 0;
+let currentScene = 1;
 let time = 0;
 let song;
 let ballerinaModel;
 let nutcrackerModel;
+let newCanvasCreated = false
 
 let startTime;
 
@@ -25,44 +26,54 @@ function preload() {
 function draw() {
   
   background(BACKGROUND_COLOR);
-  orbitControl(0.05, 0.05, 0.05, {freeRotation: true});
-  drawSceneOne()
   
   // currentScene = getCurrentScene();
   
-  // switch (currentScene) {
-    //   case 1:
-    //     drawRect(0);
-    //     break;
-    //   case 2:
-    //     drawRect("red");
-    //     break;
-    //   case 3:
-    //     drawRect(255);
-    //     break;
-    // }
-    
-  // showTime();
+  switch (currentScene) {
+    case 0:
+        drawSceneOne()
+        break;
+      case 1:
+        if (!newCanvasCreated) {
+          let canvas3dElement = document.querySelector('#defaultCanvas0')
+          canvas3dElement.remove()
 
+          var s2 = function (sketch) {
+            sketch.setup = function () {
+              let canvas2 = sketch.createCanvas(640, 360);
+              sketch.noStroke();
+            };
+            sketch.draw = function () {
+              sketch.background(100);
+            
+              draw2dWindow(sketch)
+            };
+          };
+          
+          new p5(s2);
+        }
+        newCanvasCreated = true;
+        break;
+    }
 }
 
-function getCurrentScene() {
-  const ms = millis()
+// function getCurrentScene() {
+//   const ms = millis()
 
-  // from 0 to 2 seconds
-  if (ms - time <= 2000) {
-    return 1
-    // from 2 to 4 seconds
-  } else if (ms - time <= 4000) {
-    return 2
-    // from 4 to 6 seconds
-  } else if (ms - time <= 6000) {
-    return 3
-  } else {
-    time = ms
-    return 1
-  }
-}
+//   // from 0 to 2 seconds
+//   if (ms - time <= 2000) {
+//     return 1
+//     // from 2 to 4 seconds
+//   } else if (ms - time <= 4000) {
+//     return 2
+//     // from 4 to 6 seconds
+//   } else if (ms - time <= 6000) {
+//     return 3
+//   } else {
+//     time = ms
+//     return 1
+//   }
+// }
 
 function drawSceneOne() {
 
@@ -91,6 +102,10 @@ function drawSceneOne() {
   drawChair()
   drawChristmasTree()
   drawWindow()
+}
+
+function drawSceneTwo() {
+ 
 }
 
 // function showTime() {
