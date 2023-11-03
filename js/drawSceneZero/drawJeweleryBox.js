@@ -9,7 +9,7 @@ const PANEL_MARGIN = 10;
 const PANEL_DEPTH = 2;
 const MAX_PLATFORM_LEVEL_OFFSET = BOTTOM_BOX_HEIGHT / 2;
 const NUTCRACKER_POSITION = (BOX_WIDTH / 2 - WALL_THICKNESS * 2) * 0.8; 
-const BOX_SLEEP_TIME = 8400;
+const BOX_SLEEP_TIME = 8650;
 
 let topBoxRotationAngel = 0;
 let platformLevelOffset = 0;
