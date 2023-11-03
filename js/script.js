@@ -1,12 +1,13 @@
 const BACKGROUND_COLOR = 'black';
 const BACK_WALL_POSITION = 1000;
 
-let currentScene = 1;
+let currentScene = 0;
 let time = 0;
 let song;
 let ballerinaModel;
 let nutcrackerModel;
 let newCanvasCreated = false
+let snowFlakes = []
 
 let startTime;
 
@@ -34,6 +35,7 @@ function draw() {
         drawSceneOne()
         break;
       case 1:
+        console.log('case 1')
         if (!newCanvasCreated) {
           let canvas3dElement = document.querySelector('#defaultCanvas0')
           canvas3dElement.remove()
@@ -45,9 +47,21 @@ function draw() {
             };
             sketch.draw = function () {
               sketch.background(100);
-            
-              // draw2dWindow(sketch)
-              drawSnowflake(sketch, 150, 150)
+             
+                if (frameCount % 3 === 0) {
+                  let x = map(noise(frameCount * 100), 0, 1,  0, 640)
+                  snowFlakes.push({x: x, y: FRAME_THICKNESS - SNOWFLAKE_SIZE / 2})
+
+                }
+                
+                snowFlakes = snowFlakes.map(({x, y}) => {
+                  const FLAKE_SPEED = 3
+                  drawSnowflake(sketch, x, y + FLAKE_SPEED)
+                  return ({x: x, y: y + FLAKE_SPEED})
+                })
+
+
+              draw2dWindow(sketch)
             };
           };
           

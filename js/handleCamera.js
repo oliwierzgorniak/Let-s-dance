@@ -65,7 +65,7 @@ if (
 if (
   cameraMovmentPhase === 9
 ) {
-  currentScene = 2
+  currentScene = 1
 }
 
   camera(cameraProps.x, cameraProps.y, cameraProps.z, cameraProps.xCentral, cameraProps.yCentral, cameraProps.zCentral, cameraProps.x * 5.7, 1000, 0)
