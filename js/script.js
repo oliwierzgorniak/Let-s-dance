@@ -19,9 +19,9 @@ function setup() {
 }
 
 function preload() {
-  song = loadSound("./assets/tchaikovsky-dance-of-the-sugar-plum-fairy.mp3")
-  ballerinaModel = loadModel("./assets/ballerina.obj", true);
-  nutcrackerModel = loadModel("./assets/nutcracker.obj", true);
+  song = loadSound("./assets/tchaikovsky-dance-of-the-sugar-plum-fairy.mp3", handleWhenLoaded)
+  ballerinaModel = loadModel("./assets/ballerina.obj", true, handleWhenLoaded);
+  nutcrackerModel = loadModel("./assets/nutcracker.obj", true, handleWhenLoaded);
 }
 
 function draw() {

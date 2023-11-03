@@ -16,6 +16,7 @@
     <script src="./js/handleCamera.js"></script>
     <script src="./js/2dScene/draw2dWindow.js"></script>
     <script src="./js/2dScene/drawSnowflake.js"></script>
+    <script src="./js/handleWhenLoaded.js"></script>
     <style>
       body {
         min-height: 100vh;
@@ -37,13 +38,13 @@
       }
 
       .modal {
+        display: none;
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
         opacity: 1;
         z-index: 10;
-        display: flex;
         flex-direction: column;
         align-items: center;
         background-color: black;
