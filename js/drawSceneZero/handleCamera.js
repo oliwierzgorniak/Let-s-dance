@@ -34,25 +34,25 @@ function handleCamera() {
       break;
     case 1:
       if (cameraProps.x > -TABLE_SURFACE_RADIUS * 0.62) {
-        cameraProps.x -= 0.488;
+        cameraProps.x -= 0.479;
         cameraProps.y -= 0.3;
       } else cameraMovmentPhase = 2;
       break;
     case 2:
       if (cameraProps.x < 0) {
-        cameraProps.x += 0.488;
+        cameraProps.x += 0.479;
         cameraProps.y += 0.3;
       } else cameraMovmentPhase = 3;
       break;
     case 3:
       if (cameraProps.x < TABLE_SURFACE_RADIUS * 0.62) {
-        cameraProps.x += 0.488;
+        cameraProps.x += 0.479;
         cameraProps.y -= 0.3;
       } else cameraMovmentPhase = 4;
       break;
     case 4:
       if (cameraProps.x > 0) {
-        cameraProps.x -= 0.488;
+        cameraProps.x -= 0.479;
         cameraProps.y += 0.3;
       } else cameraMovmentPhase = 5;
       break;
@@ -80,7 +80,7 @@ function handleCamera() {
       break;
     case 8:
       if (cameraProps.y > -BACK_WALL_POSITION * 0.58) {
-        cameraProps.y -= 1.8;
+        cameraProps.y -= 1.83;
         cameraProps.yCentral -= 1.8;
         cameraProps.zCentral += 0.11;
       } else cameraMovmentPhase = 9;
