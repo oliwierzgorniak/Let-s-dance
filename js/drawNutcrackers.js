@@ -61,13 +61,16 @@ function drawNutcrackers() {
     nutcrackerTowersOffset -= 0.2;
   } else if (boxAnimationPhase === 15) boxAnimationPhase = 16;
 
+push()
+  fill(117, 81, 19)
+  specularMaterial(117, 81, 19)
+
   push()
   rotateX(90)
   translate(NUTCRACKER_POSITION + nutcrackersOffset.x, BOTTOM_BOX_HEIGHT / 2 + WALL_THICKNESS / 2 + NUTCRACKER_APPROXIMATE_HEIGHT / 2 + platformLevelOffset - TOWER_CYLINDER_HEIGHT + nutcrackersOffset.y, (BOX_DEPTH - WALL_THICKNESS * 2) / 2 * 0.7 + nutcrackersOffset.z)
   scale(NUTCRACKER_SCALE)
   rotateY(nutcrackersOffset.yRotation)
   rotateX(nutcrackersOffset.xRotation)
-  normalMaterial()
   rotateY(180)
   model(nutcrackerModel)
   pop()
@@ -78,11 +81,12 @@ function drawNutcrackers() {
   scale(NUTCRACKER_SCALE)
   rotateY(-nutcrackersOffset.yRotation)
   rotateX(nutcrackersOffset.xRotation)
-  normalMaterial()
   rotateY(180)
   model(nutcrackerModel)
   pop()
   
+  pop()
+
   drawNutcrackerTowers()
 }
 
@@ -95,6 +99,9 @@ function drawNutcrackerTowers() {
     nutcrackerTowersOffset += 0.3;
   } else if (boxAnimationPhase === 14) boxAnimationPhase = 15;
 
+  push()
+  fill(184, 163, 7)
+  specularMaterial(184, 163, 7)
 
   push()
   rotateX(90)
@@ -106,5 +113,7 @@ function drawNutcrackerTowers() {
   rotateX(90)
   translate(-NUTCRACKER_POSITION, BOTTOM_BOX_HEIGHT / 2 + TOWER_CYLINDER_HEIGHT / 2 + platformLevelOffset - TOWER_CYLINDER_HEIGHT + nutcrackerTowersOffset, (BOX_DEPTH - WALL_THICKNESS * 2) / 2 * 0.7)
   cylinder(TOWER_CYLINDER_RADIUS, TOWER_CYLINDER_HEIGHT)
+  pop()
+
   pop()
 }

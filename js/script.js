@@ -44,9 +44,12 @@ function draw() {
             sketch.setup = function () {
               let canvas2 = sketch.createCanvas(640, 360);
               sketch.noStroke();
+
+              let canvasElement =document.querySelector('canvas')
+              canvasElement.style.opacity = '1'
             };
             sketch.draw = function () {
-              sketch.background(100);
+              sketch.background(BACKGROUND_COLOR);
              
                 if (frameCount % 3 === 0) {
                   let x = map(noise(frameCount * 100), 0, 1,  0, 640)
@@ -91,22 +94,31 @@ function draw() {
 // }
 
 function drawSceneOne() {
-
+  pointLight(255, 255, 255, 0, TABLE_SURFACE_RADIUS, TABLE_HEIGHT + BOTTOM_BOX_HEIGHT + 300)
   // // camera(0, TABLE_HEIGHT* 2, TABLE_HEIGHT, 0, 0, TABLE_HEIGHT) // front
   // // camera(0, 2000, 1001, 0, 0, 1000) // front
   
   // // camera(0, 1000, 1000, 0, 0, TABLE_HEIGHT * 1.3) // top
+  noStroke()
   // camera(0, 200, TABLE_HEIGHT * 1.8 + 1, 0, 0, TABLE_HEIGHT * 1.2) // top
   handleCamera()
   
-  normalMaterial()
   push()
+  fill(40, 30, 3)
+  specularMaterial(20, 20, 0)
   rotateX(90)
   translate(0, 0, BACK_WALL_POSITION)
-  plane(10000, 10000)
+  plane(20000, 20000)
   pop()
   
-  plane(10000, 10000)
+  push()
+  fill(61, 2, 2)
+  specularMaterial(61, 2, 2)
+  plane(20000, 20000)
+  pop()
+
+  // ambientMaterial(138, 98, 29)
+
   
   drawJeweleryBox()
   drawTable();

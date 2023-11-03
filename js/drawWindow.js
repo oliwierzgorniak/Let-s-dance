@@ -4,7 +4,10 @@ const WINDOW_HEIGHT = 360 ;
 
 function drawWindow() {
   push()
+  fill(26, 20, 1)
+  specularMaterial(26, 20, 1)
   translate(0, -BACK_WALL_POSITION - FRAME_THICKNESS * 0.2 / 2, TABLE_HEIGHT)
+  
   
   push()
   translate(0, FRAME_THICKNESS * 0.2 / 2, WINDOW_HEIGHT / 2 + FRAME_THICKNESS / 2)

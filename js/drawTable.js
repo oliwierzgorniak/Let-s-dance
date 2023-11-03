@@ -8,6 +8,8 @@ const TABLE_HEIGHT = TABLE_CYLIDNER_HEIHGT + TABLE_TOP_CONE_HEIGHT + TABLE_LEG_H
 
 function drawTable() {
   push()
+  fill(64, 43, 8)
+  specularMaterial(64, 43, 8)
   translate(0, 0, TABLE_HEIGHT)
   push()
   rotateX(-90)

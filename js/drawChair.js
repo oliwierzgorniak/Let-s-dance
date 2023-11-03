@@ -5,7 +5,11 @@ const CHAIR_BACK_HEIGHT_SCALE = 0.5;
 const CHAIR_BACK_LEG_HEIGHT = CHAIR_LEG_HEIGHT * 0.8;
 
 function drawChair() {
+  
   push()
+  fill(64, 43, 8)
+  specularMaterial(70, 60, 10)
+
   translate(-TABLE_SURFACE_RADIUS * 3, -TABLE_SURFACE_RADIUS * 2, 0)
   push()
   translate(CHAIR_SITTING_SIZE / 2 * 0.8, CHAIR_SITTING_SIZE / 2 * 0.8, CHAIR_LEG_HEIGHT / 2)

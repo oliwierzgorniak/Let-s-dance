@@ -6,8 +6,13 @@ const TREE_BASE_CONE_HEIGHT = 400;
 function drawChristmasTree() {
   push()
   translate(TABLE_SURFACE_RADIUS * 3.5, -TABLE_SURFACE_RADIUS * 3, 0)
+  fill(7, 71, 3)
+  specularMaterial(4, 38, 1)
+
   
   push()
+  fill(64, 43, 8)
+  specularMaterial(64, 43, 8)
   rotateX(90)
   translate(0, TRUNK_HEIGHT / 2, 0)
   cylinder(TRUNK_RADIUS, TRUNK_HEIGHT)

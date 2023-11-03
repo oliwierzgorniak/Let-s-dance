@@ -23,22 +23,9 @@ function drawJeweleryBox() {
   drawBottomBox()
   drawNutcrackers();
   
-  push()
-  translate(0, 0, BOTTOM_BOX_HEIGHT + TOP_BOX_HEIGHT / 2);
-  translate(0, -BOX_DEPTH / 2, -TOP_BOX_HEIGHT / 2)
-  rotateX(topBoxRotationAngel);
-  translate(0, BOX_DEPTH / 2, TOP_BOX_HEIGHT / 2);
-  box(BOX_WIDTH, BOX_DEPTH, TOP_BOX_HEIGHT);
-  pop()
   
-  
-  push()
-  translate(0, 0, BOTTOM_BOX_HEIGHT / 2 + platformLevelOffset)
-  box(BOX_WIDTH - WALL_THICKNESS * 2, BOX_DEPTH - WALL_THICKNESS * 2, WALL_THICKNESS)
-  pop()
-
   if (animationStarted) {
-
+    
     if (millis() - startTime > BOX_SLEEP_TIME && boxAnimationPhase < 17 && topBoxRotationAngel < 150)
     topBoxRotationAngel += 0.7;
   
@@ -55,17 +42,37 @@ function drawJeweleryBox() {
   if ( boxAnimationPhase === 17 && topBoxRotationAngel > 0) {
     topBoxRotationAngel -= 0.6;
   } else if (boxAnimationPhase === 17) boxAnimationPhase = 18;
-  }
-  
-  pop()
+}
+
+pop()
 }
 
 function drawBottomBox() {
   push()
+  fill(64, 43, 8)
+  specularMaterial(64, 43, 8)
+  
+  push()
+  translate(0, 0, BOTTOM_BOX_HEIGHT + TOP_BOX_HEIGHT / 2);
+  translate(0, -BOX_DEPTH / 2, -TOP_BOX_HEIGHT / 2)
+  rotateX(topBoxRotationAngel);
+  translate(0, BOX_DEPTH / 2, TOP_BOX_HEIGHT / 2);
+  box(BOX_WIDTH, BOX_DEPTH, TOP_BOX_HEIGHT);
+  pop()
+  
+  
+  push()
+  fill(117, 81, 19)
+  specularMaterial(117, 81, 19)
+  translate(0, 0, BOTTOM_BOX_HEIGHT / 2 + platformLevelOffset)
+  box(BOX_WIDTH - WALL_THICKNESS * 2, BOX_DEPTH - WALL_THICKNESS * 2, WALL_THICKNESS)
+  pop()
+  
+  push()
   translate(0, BOX_DEPTH / 2 - WALL_THICKNESS / 2, BOTTOM_BOX_HEIGHT / 2)
   box(BOX_WIDTH, WALL_THICKNESS, BOTTOM_BOX_HEIGHT)
   pop()
-
+  
   push()
   translate(0, -(BOX_DEPTH / 2 - WALL_THICKNESS / 2), BOTTOM_BOX_HEIGHT / 2)
   box(BOX_WIDTH, WALL_THICKNESS, BOTTOM_BOX_HEIGHT)
@@ -80,12 +87,17 @@ function drawBottomBox() {
   translate(BOX_WIDTH / 2 - WALL_THICKNESS / 2, 0, BOTTOM_BOX_HEIGHT / 2)
   box(WALL_THICKNESS, BOX_DEPTH - 2 * WALL_THICKNESS, BOTTOM_BOX_HEIGHT)
   pop()
+  pop()
 
   drawBoxLock()
   drawBoxPanels()
 }
 
 function drawBoxLock() {
+  push()
+  fill(143, 143, 143)
+  specularMaterial(143, 143, 143)
+  
   push()
   translate(0, BOX_DEPTH / 2 + LOCK_ONE_HEIGHT / 2, BOTTOM_BOX_HEIGHT / 2 + LOCK_ONE_RADIUS)
   cylinder(LOCK_ONE_RADIUS, LOCK_ONE_HEIGHT, 20)
@@ -95,10 +107,17 @@ function drawBoxLock() {
   translate(0, BOX_DEPTH / 2 + LOCK_ONE_HEIGHT / 2, BOTTOM_BOX_HEIGHT / 2)
   cylinder(LOCK_ONE_RADIUS * 0.8, LOCK_ONE_HEIGHT, 20)
   pop()
+
+  pop()
 }
 
 function drawBoxPanels() {
   const panelWidth = (BOX_WIDTH - LOCK_ONE_RADIUS * 2) / 2 - PANEL_MARGIN * 2
+
+  push()
+  fill(117, 81, 19)
+  specularMaterial(117, 81, 19)
+
 
   push()
   translate(panelWidth / 2 + LOCK_ONE_RADIUS + PANEL_MARGIN, BOX_DEPTH / 2 + PANEL_DEPTH / 2, BOTTOM_BOX_HEIGHT / 2)
@@ -125,6 +144,8 @@ function drawBoxPanels() {
   push()
   translate(0, -(BOX_DEPTH / 2 + PANEL_DEPTH / 2), BOTTOM_BOX_HEIGHT / 2)
   box(BOX_WIDTH - PANEL_MARGIN * 2, PANEL_DEPTH, BOTTOM_BOX_HEIGHT - PANEL_MARGIN * 2)
+  pop()
+
   pop()
 }
 
