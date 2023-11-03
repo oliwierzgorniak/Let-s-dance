@@ -10,7 +10,9 @@ function drawTable() {
   push()
   fill(64, 43, 8)
   specularMaterial(64, 43, 8)
+  
   translate(0, 0, TABLE_HEIGHT)
+  
   push()
   rotateX(-90)
   translate(0, TABLE_CYLIDNER_HEIHGT / 2, 0)
@@ -34,5 +36,6 @@ function drawTable() {
   translate(0, -(TABLE_CYLIDNER_HEIHGT + TABLE_TOP_CONE_HEIGHT / 2 + TABLE_LEG_HEIGHT + TABLE_CYLIDNER_HEIHGT / 2), 0)
   cone(TABLE_SURFACE_RADIUS * 0.4, TABLE_BOTTOM_CONE_HEIGHT)
   pop()
+  
   pop()
 }

@@ -3,20 +3,33 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Assignment</title>
+    <title>Let's dance assignment</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.7.0/p5.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.7.0/addons/p5.sound.js"></script>
-    <script src="./js/drawJeweleryBox.js"></script>
-    <script src="./js/drawTable.js"></script>
-    <script src="./js/drawBallerina.js"></script>
-    <script src="./js/drawNutcrackers.js"></script>
-    <script src="./js/drawChair.js"></script>
-    <script src="./js/drawChristmasTree.js"></script>
-    <script src="./js/drawWindow.js"></script>
-    <script src="./js/handleCamera.js"></script>
-    <script src="./js/2dScene/draw2dWindow.js"></script>
-    <script src="./js/2dScene/drawSnowflake.js"></script>
     <script src="./js/handleWhenLoaded.js"></script>
+    <script src="./js/drawSceneZero.js"></script>
+    <script src="./js/drawSceneOne.js"></script>
+    <script defer src="./js/handleAnimationStart.js"></script>
+    <script src="./js/drawSceneZero/drawWalls.js"></script>
+    <script src="./js/drawSceneZero/drawBallerina.js"></script>
+    <script src="./js/drawSceneZero/drawChair.js"></script>
+    <script src="./js/drawSceneZero/drawChristmasTree.js"></script>
+    <script src="./js/drawSceneZero/drawJeweleryBox.js"></script>
+    <script src="./js/drawSceneZero/drawJewelryBox/drawBottomBox.js"></script>
+    <script src="./js/drawSceneZero/drawJewelryBox/handleBoxAnimation.js"></script>
+    <script src="./js/drawSceneZero/drawJewelryBox/drawBottomBox/drawBoxLock.js"></script>
+    <script src="./js/drawSceneZero/drawJewelryBox/drawBottomBox/drawBoxPanels.js"></script>
+    <script src="./js/drawSceneZero/drawNutcrackers.js"></script>
+    <script src="./js/drawSceneZero/drawNutcrackers/drawNutcrackerModels.js"></script>
+    <script src="./js/drawSceneZero/drawNutcrackers/handleNutcrackersAnimation.js"></script>
+    <script src="./js/drawSceneZero/drawNutcrackers/drawNutcrackerTowers.js"></script>
+    <script src="./js/drawSceneZero/drawTable.js"></script>
+    <script src="./js/drawSceneZero/drawWindow.js"></script>
+    <script src="./js/drawSceneZero/handleCamera.js"></script>
+    <script src="./js/drawSceneOne/create2dCanvas.js"></script>
+    <script src="./js/drawSceneOne/create2dCanvas/draw2dWindow.js"></script>
+    <script src="./js/drawSceneOne/create2dCanvas/drawSnowflake.js"></script>
+    <script src="./js/drawSceneOne/create2dCanvas/handleSnowflakes.js"></script>
     <style>
       body {
         min-height: 100vh;
@@ -51,11 +64,12 @@
         border-radius: 0.4em;
         padding: 1em 3em;
         font-size: 1.1rem;
+        text-align: center;
       }
 
       button {
         margin-bottom: 1.5em;
-        margin-top: 1.5em;
+        margin-top: 1.7em;
         border: none;
         background-color: white;
         padding: 0.8em;

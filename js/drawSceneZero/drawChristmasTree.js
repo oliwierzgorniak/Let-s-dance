@@ -5,10 +5,10 @@ const TREE_BASE_CONE_HEIGHT = 400;
 
 function drawChristmasTree() {
   push()
-  translate(TABLE_SURFACE_RADIUS * 3.5, -TABLE_SURFACE_RADIUS * 3, 0)
   fill(7, 71, 3)
   specularMaterial(4, 38, 1)
-
+  
+  translate(TABLE_SURFACE_RADIUS * 3.5, -TABLE_SURFACE_RADIUS * 3, 0)
   
   push()
   fill(64, 43, 8)
@@ -17,7 +17,6 @@ function drawChristmasTree() {
   translate(0, TRUNK_HEIGHT / 2, 0)
   cylinder(TRUNK_RADIUS, TRUNK_HEIGHT)
   pop()
-
   
   push()
   rotateX(90)
@@ -39,5 +38,6 @@ function drawChristmasTree() {
   scale(0.6)
   cone(TREE_BASE_CONE_RADIUS, TREE_BASE_CONE_HEIGHT)
   pop()  
+  
   pop()
 }
