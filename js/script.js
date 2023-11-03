@@ -71,6 +71,8 @@ function draw() {
           new p5(s2);
         }
         newCanvasCreated = true;
+
+        if (millis() - startTime >= 56000) location.reload()
         break;
     }
 }
@@ -104,8 +106,8 @@ function drawSceneOne() {
   handleCamera()
   
   push()
-  fill(40, 30, 3)
-  specularMaterial(20, 20, 0)
+  fill(15, 15, 15)
+  specularMaterial(15, 15, 15)
   rotateX(90)
   translate(0, 0, BACK_WALL_POSITION)
   plane(20000, 20000)
@@ -157,14 +159,9 @@ startButtonElement.addEventListener('click', () => {
 
   animationStarted = true;
   startTime = millis()
-  startButtonElement.remove()
+  
+  let modalElement = startButtonElement.parentElement
+  modalElement.remove()
 })
 
 
-// function drawRect(colour) {
-//   push();
-//   fill(colour);
-//   rectMode(CENTER);
-//   rect(width / 2, height / 2, width / 2);
-//   pop();
-// }

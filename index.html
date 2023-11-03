@@ -25,6 +25,9 @@
         justify-content: center;
         align-items: center;
         background-color: black;
+        color: white;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        box-sizing: border-box;
       }
     
       canvas {
@@ -33,20 +36,42 @@
         opacity: 0.4;
       }
 
-      button {
+      .modal {
         position: absolute;
-        bottom: 50%;
+        top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
         opacity: 1;
         z-index: 10;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: black;
+        border-radius: 0.4em;
+        padding: 1em 3em;
+        font-size: 1.1rem;
+      }
+
+      button {
+        margin-bottom: 1.5em;
+        margin-top: 1.5em;
+        border: none;
+        background-color: white;
+        padding: 0.8em;
+        font-size: 1.2rem;
+        border-radius: 0.2em;
+        cursor: pointer;
       }
     </style>
   </head>
 
   <body>
     <main>
-        <button>Click to start</button>
+        <div class="modal">
+          <p>For the best experience keep the volume low</p>
+          <img src="./assets/volume.svg" alt="volume low icon" width="40" height="40">
+          <button>Click to be amzed!</button>
+        </div>
     </main>
     <script src="./js/script.js"></script>
   </body>

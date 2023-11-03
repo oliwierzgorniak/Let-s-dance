@@ -57,8 +57,8 @@ if (
   cameraMovmentPhase === 8 &&
   cameraProps.y > -BACK_WALL_POSITION * 0.58
 ) {
-  cameraProps.y -= 2.1;
-  cameraProps.yCentral -= 2.2
+  cameraProps.y -= 1.8;
+  cameraProps.yCentral -= 1.8
   cameraProps.zCentral += 0.11
 } else if (cameraMovmentPhase === 8) cameraMovmentPhase = 9;
 
