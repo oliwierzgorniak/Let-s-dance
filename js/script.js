@@ -46,7 +46,8 @@ function draw() {
             sketch.draw = function () {
               sketch.background(100);
             
-              draw2dWindow(sketch)
+              // draw2dWindow(sketch)
+              drawSnowflake(sketch, 150, 150)
             };
           };
           
